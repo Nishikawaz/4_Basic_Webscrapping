@@ -91,11 +91,3 @@ Challenge de web scraping y modelado de datos. La consigna pedía extraer datos 
 books.toscrape.com es un sitio hecho explícitamente para practicar scraping, así que no hay problema ético ni de términos de servicio en recorrerlo.
 
 ---
-
-## Limitaciones conocidas
-
-- **La inferencia de país es aproximada.** Depende de que el gentilicio aparezca literal en la biografía y esté en el diccionario de mapeo. **244 de los 805 autores quedaron sin `country`**, y el reparto resultante está sesgado al mundo anglosajón (396 USA, 106 UK) porque son los gentilicios que Wikipedia en inglés menciona más explícitamente.
-- **Cobertura de autoría incompleta.** **27 de los 1.000 libros quedaron sin autor**: títulos que Open Library no reconoció. Otros 395 autores no tienen `birth_year`.
-- **La base viene versionada.** `pengu_books.db` está en el repo para poder inspeccionar los resultados sin re-scrapear. Es cómodo acá, pero versionar un binario no escalaría a un dataset grande.
-- **Sin manejo de cambios en el sitio.** Los selectores CSS están hardcodeados contra la estructura actual de books.toscrape.com; un rediseño rompería el scraping.
-- **Todo en un notebook.** Facilita seguir el razonamiento paso a paso, pero no es ejecutable como script ni programable por cron.
